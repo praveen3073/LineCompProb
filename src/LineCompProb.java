@@ -1,22 +1,28 @@
-import java.util.*;
+
 
 public class LineCompProb {
 	public static void main(String args[]) {
 		System.out.println("Welcome to Line Comparison Computation Program");
-		Line line = new Line(4,3,2,1);
+		Point point1 = new Point(4,2);
+		Point point2 = new Point(3,1);
+		Line line = new Line(point1,point2);
 		System.out.println("The length of line is: "+calcLineLength(line));
 		checkLineEquality();
 		compareLines();
 	}
 	public static double calcLineLength(Line line)
 	{
-		double lineLength = Math.sqrt(Math.pow(line.x2-line.x1,2)+Math.pow(line.y2-line.y1,2));
+		double lineLength = Math.sqrt(Math.pow(line.point2.x-line.point1.x,2)+Math.pow(line.point2.y-line.point1.y,2));
 		return lineLength;
 	}
 	public static void checkLineEquality()
 	{
-		Line line1 = new Line(4,3,2,1);
-		Line line2 = new Line(10,9,8,7);
+		Point point1 = new Point(4,2);
+		Point point2 = new Point(3,1);
+		Point point3 = new Point(10,8);
+		Point point4 = new Point(9,7);
+		Line line1 = new Line(point1,point2);
+		Line line2 = new Line(point3,point4);
 		if( Double.toString( calcLineLength(line1) ).equals( Double.toString( calcLineLength(line2) ) ))
 			System.out.println("The lines are equal.");
 		else
@@ -24,8 +30,12 @@ public class LineCompProb {
 	}
 	public static void compareLines()
 	{
-		Line line1 = new Line(4,3,2,1);
-		Line line2 = new Line(10,9,8,6);
+		Point point1 = new Point(4,2);
+		Point point2 = new Point(3,1);
+		Point point3 = new Point(11,8);
+		Point point4 = new Point(9,6);
+		Line line1 = new Line(point1,point2);
+		Line line2 = new Line(point3,point4);
 		int lineLenDiff = Double.toString( calcLineLength(line1) ).compareTo( Double.toString( calcLineLength(line2) ) );
 		if(lineLenDiff==0)
 			System.out.println("The lines are equal.");
