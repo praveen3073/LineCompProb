@@ -3,10 +3,10 @@
 public class LineCompProb {
 	public static void main(String args[]) {
 		System.out.println("Welcome to Line Comparison Computation Program");
-		Point point1 = new Point(4,2);
-		Point point2 = new Point(3,1);
-		Point point3 = new Point(11,8);
-		Point point4 = new Point(9,6);
+		Point point1 = new Point(0,0);
+		Point point2 = new Point(0,3);
+		Point point3 = new Point(0,0);
+		Point point4 = new Point(0,101);
 		Line line1 = new Line(point1,point2);
 		Line line2 = new Line(point3,point4);
 		System.out.println("The length of line1 is: "+calcLineLength(line1));
@@ -28,7 +28,7 @@ public class LineCompProb {
 	}
 	public static void compareLines(Line line1, Line line2)
 	{
-		int lineLenDiff = Double.toString( calcLineLength(line1) ).compareTo( Double.toString( calcLineLength(line2) ) );
+		int lineLenDiff = ( (Double)calcLineLength(line1) ).compareTo( (Double) calcLineLength(line2) );
 		if(lineLenDiff==0)
 			System.out.println("The two lines are equal.");
 		else if(lineLenDiff>0)
